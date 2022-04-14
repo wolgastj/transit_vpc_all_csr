@@ -129,7 +129,7 @@
 	"CodeRegion" : "us-east-1",
 	"Name" : "cisco-configurator",
         "Description": "Transit VPC: This function is invoked when a generic VPN configuration is placed in an S3 bucket - it converts the generic information into Cisco IOS specific commands and pushes the config to transit VPC routers.",
-        "Runtime": "python2.7",
+        "Runtime": "python3.9",
         "Timeout": "300",
         "MemorySize": "128"
       },
@@ -415,7 +415,7 @@
          },
          "Handler": "index.handler",
          "MemorySize": "128",
-         "Runtime": "python2.7",
+         "Runtime": "python3.9",
          "Timeout": "300",
          "Role": {"Fn::GetAtt": ["GetAMIRole", "Arn"]}
       }
@@ -605,7 +605,7 @@
           "S3Bucket": { "Fn::Join": ["", ["cisco-csr-tvpc-dmvpn-", {"Ref" : "AWS::Region"}]] },
       	  "S3Key": "latest/transit-vpc/solution-helper/solution-helper.zip"
       	},
-      	"Runtime": "python2.7",
+      	"Runtime": "python3.9",
       	"Timeout": "60"
      }
    },
