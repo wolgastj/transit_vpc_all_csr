@@ -116,7 +116,7 @@
         "CodeRegion" : "us-east-1",
         "Name" : "cisco-configurator",
         "Description": "Spoke VPC: This function is invoked when a generic VPN configuration is placed in an S3 bucket - it converts the generic information into Cisco IOS specific commands and pushes the config to spoke VPC routers.",
-        "Runtime": "python2.7",
+        "Runtime": "python3.9",
         "Timeout": "300",
         "MemorySize": "128"
       },
@@ -125,7 +125,7 @@
         "CodeRegion" : "us-west-2",
         "Name" : "spoke-broker",
         "Description": "Spoke VPC: Broker function responsible for configuring Spoke VPC and writing files into Transit VPC S3",
-        "Runtime": "python2.7",
+        "Runtime": "python3.9",
         "Timeout": "300",
         "MemorySize": "128"
       },
@@ -551,7 +551,7 @@
          },
          "Handler": "index.handler",
          "MemorySize": "128",
-         "Runtime": "python2.7",
+         "Runtime": "python3.9",
          "Timeout": "300",
          "Role": {"Fn::GetAtt": ["GetAMIRole", "Arn"]}
       }
@@ -825,7 +825,7 @@
          },
          "Handler": "index.handler",
          "MemorySize": "128",
-         "Runtime": "python2.7",
+         "Runtime": "python3.9",
          "Timeout": "300",
          "Role": {"Fn::GetAtt" : ["WaitForRoleLambdaExecutionRole", "Arn"]}
       }
@@ -849,7 +849,7 @@
           "S3Bucket": { "Fn::Join": ["", ["cisco-csr-tvpc-dmvpn-", {"Ref" : "AWS::Region"}]] },
           "S3Key": "latest/spoke-vpc/solution-helper/spoke-solution-helper.zip"
         },
-        "Runtime": "python2.7",
+        "Runtime": "python3.9",
         "Timeout": "300"
      }
     },
@@ -1125,7 +1125,7 @@
          },
          "Handler": "index.handler",
          "MemorySize": "128",
-         "Runtime": "python2.7",
+         "Runtime": "python3.9",
          "Timeout": "300",
          "Role": {"Fn::GetAtt": ["CheckInstancesLambdaExecutionRole", "Arn"]}
       }
